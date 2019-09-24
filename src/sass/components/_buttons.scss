@@ -1,0 +1,59 @@
+/*
+-----------------------------------------
+Button
+-----------------------------------------
+*/
+.btn{
+    display: inline-block;
+    padding: rem(10px) rem(35px);
+    text-transform: uppercase;
+    border-radius: 0;
+    font-size: rem(14px);
+    color: $white;
+
+    &-alpha{
+        background-color: $black;
+
+        &:hover{
+            background-color: $color-alpha;
+            color: $black;
+        }
+    }
+}
+
+/*
+-----------------------------------------
+Contact Btn
+-----------------------------------------
+*/
+.socail-link{
+    &--facebook,
+    &--linkdin{
+        svg{
+            path{
+                fill: #C2C2C2;
+                transition: all 0.2s ease-in-out;
+
+            }
+        }
+    }
+    &--facebook{
+        &:hover{
+            svg{
+                path{
+                    fill: #3A559F;
+                }
+            }
+        }
+    }
+
+    &--linkdin{
+        &:hover{
+            svg{
+                path{
+                    fill: #0077B7;
+                }
+            }
+        }
+    }
+}

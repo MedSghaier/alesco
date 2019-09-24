@@ -1,0 +1,988 @@
+$contrast-primary-color:        #000080;
+$contrast-secondary-color:      #fffd02;
+
+
+.contrast {
+    background-color: $contrast-primary-color !important;
+
+    /*
+    -----------------------------------------
+    Global
+    -----------------------------------------
+    */
+
+    *  {
+        color: $contrast-secondary-color !important;
+    }
+
+    /*
+    -----------------------------------------
+    Helpers
+    -----------------------------------------
+    */
+
+    // Background Colors
+    @each $alias, $color in $theme-colors {
+        .bg-color-#{$alias}{
+            background-color: $contrast-primary-color !important;
+        }
+    }
+
+    // Badge Icon
+    .badge-icon{
+        background-color: $contrast-secondary-color !important;
+
+        [class^="ico-"],
+        [class*=" ico-"]{
+            color:$contrast-primary-color !important;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Sidebar
+    -----------------------------------------
+    */
+    .sidebar{
+        background-color: $contrast-secondary-color;
+        * {
+            color:$contrast-primary-color !important;   
+        }
+            // Hamburger
+        .hamburger-inner,
+        .hamburger-inner--white{
+            &,
+            &:before,
+            &:after{
+                background-color: $contrast-primary-color !important;
+            }
+        }
+        [class^="ico-"],
+        [class*=" ico-"]{
+            color:$contrast-primary-color !important;
+        }
+    }
+
+
+    /*
+    -----------------------------------------
+    Header
+    -----------------------------------------
+    */
+
+    .header{
+        background-color:$contrast-primary-color !important;
+        border-color: $contrast-secondary-color;
+
+        // Hamburger
+        .hamburger-inner,
+        .hamburger-inner--white{
+            &,
+            &:before,
+            &:after{
+                background-color: $contrast-secondary-color;
+            }
+        }
+
+        // Searchbox
+        &__searchbox{
+            background-color: $contrast-primary-color !important;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Hero
+    -----------------------------------------
+    */
+    .hero{
+        &:after{
+            content:none;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Navigation
+    -----------------------------------------
+    */
+
+    .navigation{
+        background-color:rgba($contrast-primary-color, 0.5) !important;
+        border-color: $contrast-secondary-color !important;
+
+        &__main{
+            background-color:$contrast-primary-color !important;
+            border-color: $contrast-primary-color !important;
+            &-link{
+                &:after{
+                    color: $contrast-secondary-color !important;
+                }
+            }
+        }
+
+        &__sub{
+            &-nav{
+                background-color:$contrast-secondary-color !important;
+    
+                .back-btn{
+                    color: $contrast-primary-color !important;
+
+                    &:before{
+                        color: $contrast-primary-color !important;
+                    }
+                }
+            }
+
+            &-link,
+            &-final-link{
+                color: $contrast-primary-color !important;
+            }
+        }
+        
+        &-accordion{
+            &__toggler{
+                color: $contrast-primary-color !important;
+                &:after{
+                    color: $contrast-primary-color !important;
+                }
+            }
+        }
+
+        // Hamburger
+        .hamburger-inner,
+        .hamburger-inner--white{
+            &,
+            &:before,
+            &:after{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Footer
+    -----------------------------------------
+    */
+
+    .footer{
+        background-color:$contrast-primary-color !important;
+        border-top: rem(1px) solid $contrast-secondary-color !important;
+        background-image: none !important;
+        &:before{
+            background-color:$contrast-primary-color !important;
+        }
+        &__useful-links,
+        &__ext-links{
+            &:after{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Buttons
+    -----------------------------------------
+    */
+
+    // Main Button
+    .btn{
+        background-color:$contrast-secondary-color !important;
+        border-color: $contrast-secondary-color !important;
+        &, *{
+            color: $contrast-primary-color !important;
+        }
+        @include hover-focus-active{
+            background-color: $contrast-primary-color !important;
+            border-color: $contrast-secondary-color !important;
+            &, *{
+                color: $contrast-secondary-color !important;
+            }
+        }
+
+        &--dark{
+            &.active{
+                background-color: $contrast-primary-color !important;
+                border-color: $contrast-secondary-color !important;
+                color: $contrast-secondary-color !important;
+            }
+        }
+
+        &.no-hover{
+            @include hover-focus-active{
+                background-color:$contrast-secondary-color !important;
+                border-color: $contrast-secondary-color !important;
+
+                &,
+                * {
+                  color: $contrast-primary-color !important;
+                }
+            }
+        }
+
+        &-goto{
+            &:before{
+                color: $contrast-secondary-color !important;
+            }
+        }
+
+        &-elipse{
+            background-color: $contrast-primary-color !important;
+            border-color: $contrast-secondary-color !important;
+            @include hover-focus-active{
+                background-color: $contrast-secondary-color !important;
+                [class^="ico-"],
+                [class*=" ico-"]{
+                    color: $contrast-primary-color !important;
+                }
+            }
+        }
+    }
+
+    // Button Badge
+    .dropdown .btn-badge,
+    .btn-badge{
+        [class^="ico-"],
+        [class*="ico-"]{
+            background-color: $contrast-primary-color !important;
+            color: $contrast-secondary-color !important;
+            border-color: $contrast-secondary-color !important;
+        }
+        @include hover-focus-active{
+            [class^="ico-"],
+            [class*="ico-"]{
+                background-color: $contrast-secondary-color !important;
+                color: $contrast-primary-color !important;
+            }
+        }
+    }
+
+
+
+    /*
+    -----------------------------------------
+    Bootstrap select
+    -----------------------------------------
+    */
+     // Selectbox
+     .bootstrap-select{
+        &.listing-filter{
+            .dropdown{
+                &-toggle{
+                    background-color: $contrast-secondary-color !important;
+                    border-color: $contrast-primary-color !important;
+                    color: $contrast-secondary-color !important;
+
+                    &:hover{
+                        &, *{
+                            background-color: $contrast-secondary-color !important;
+                            border-color: $contrast-primary-color !important;
+                            color: $contrast-primary-color !important;
+                        }
+                    }
+
+                    &:after{
+                        color: $contrast-primary-color !important;
+                    }
+                }
+                &-menu{
+                    background-color: $contrast-primary-color !important;
+                    border-color: $contrast-secondary-color !important;
+                    color: $contrast-secondary-color !important;
+
+                    &.inner{
+                        li{
+                            &.selected,
+                            &.active,
+                            &:active{
+                                a{
+                                    background-color: $contrast-secondary-color !important;
+                                    span{
+                                        color: $contrast-primary-color !important;
+                                    }
+                                }
+                            }
+                            a{
+                                &:hover{
+                                    background-color: $contrast-secondary-color !important;
+                                    span{
+                                        color: $contrast-primary-color !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+        
+        &.form-select{
+            .dropdown{
+                &-toggle{
+                    background-color: $contrast-secondary-color !important;
+                    border-color: $contrast-primary-color !important;
+                    color: $contrast-secondary-color !important;
+
+                    &:hover{
+                        &, *, &.bs-placeholder{
+                            background-color: $contrast-secondary-color !important;
+                            border-color: $contrast-primary-color !important;
+                            color: $contrast-primary-color !important;
+                        }
+                    }
+
+                    &:after{
+                        color: $contrast-primary-color !important;
+                    }
+                }
+                &-menu{
+                    background-color: $contrast-primary-color !important;
+                    border-color: $contrast-secondary-color !important;
+                    color: $contrast-secondary-color !important;
+
+                    &.inner{
+                        li{
+                            &.selected,
+                            &.active,
+                            &:active{
+                                a{
+                                    background-color: $contrast-secondary-color !important;
+                                    span{
+                                        color: $contrast-primary-color !important;
+                                    }
+                                }
+                            }
+                            a{
+                                &:hover{
+                                    background-color: $contrast-secondary-color !important;
+                                    span{
+                                        color: $contrast-primary-color !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+    }
+
+     /*
+    -----------------------------------------
+    Dropdowns
+    -----------------------------------------
+    */
+    .lang__dropdown,.header__dropdown{
+        &-menu{
+            background-color: $contrast-primary-color !important;
+            border: rem(1px) solid $contrast-secondary-color !important;
+        }
+
+        &-item{
+            &:hover{
+                background-color: $contrast-secondary-color !important;
+                color: $contrast-primary-color !important;
+            }
+        }
+    }
+
+     /*
+    -----------------------------------------
+    Paginations
+    -----------------------------------------
+    */
+    .m-pagination{
+        &__item{
+            &.active{
+               a{
+                    color: $contrast-primary-color !important;
+               }
+
+                &:before{
+                    background-color: $contrast-secondary-color !important;
+                }
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Breadcrumb
+    -----------------------------------------
+    */
+
+    .breadcrumbs{
+        border-color: $contrast-secondary-color !important;
+
+        &__list{
+            &:after{
+                background-color: $contrast-primary-color !important;
+            }
+        }
+
+        &__link{
+            background-color: $contrast-primary-color !important;
+            color: $contrast-secondary-color !important;
+
+            &:before{
+                background-color: $contrast-secondary-color !important;
+            }
+
+            &:after{
+                background-color: $contrast-primary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Headline
+    -----------------------------------------
+    */
+    .headline{
+        background-color: $contrast-secondary-color !important;
+        h1{
+            color: $contrast-primary-color !important;
+        }
+        
+        &__footer{
+            background-color: $contrast-primary-color !important;
+            &:after{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+    /*
+    -----------------------------------------
+    Section
+    -----------------------------------------
+    */
+    .section{
+        $self: &;
+        &--service{
+            .section__cta{
+                &:before{
+                    background-color: $contrast-primary-color !important;
+                }
+            }
+        }
+
+        &--social{
+            color:  $contrast-primary-color !important;
+            &:before{
+                background-color: $contrast-secondary-color !important;
+            }
+            &:after{
+                content: none;
+            }
+
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Teasers
+    -----------------------------------------
+    */
+    .teaser{
+        $self: &;
+        &--negative{
+            color: $contrast-primary-color !important;
+
+            .teaser__header{
+                p{
+                    color: $contrast-primary-color !important;
+                }
+            }
+
+            &:before{
+                background-color: rgba($contrast-primary-color, 0.5) !important;
+            }
+        }
+    }
+
+     /*
+    -----------------------------------------
+    Tabs
+    -----------------------------------------
+    */
+    .tabs{
+        &__link{
+            color: $contrast-primary-color !important;
+            &.active{
+                border-color: $contrast-primary-color !important;
+            }
+        }
+        &__drop-handler{
+            background-color: $contrast-primary-color !important;
+            color:$contrast-secondary-color !important;
+
+            &.show{
+                .tabs__dropdown-toggle{
+                    background-color: $contrast-primary-color !important;
+                    color:$contrast-secondary-color !important;
+                }
+            }
+        }
+        &__dropdown{
+            background-color: $contrast-primary-color !important;
+            border-color: $contrast-secondary-color !important;
+            &-toggle{
+                border-color: $contrast-primary-color !important;
+                &:after{
+                    color: $contrast-secondary-color !important;
+                }
+            }
+            &-menu{
+                background-color: $contrast-primary-color !important;
+                border-color: $contrast-secondary-color !important;
+            }
+        }
+        &__dropdown-item{
+            &:hover,&.active{
+                background-color: $contrast-secondary-color !important;
+                color: $contrast-primary-color !important;
+            }
+        }
+
+        .tab-content:after{
+            background-color: rgba($contrast-primary-color, 0.5) !important;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Box
+    -----------------------------------------
+    */
+    .service-box{
+        &--home{
+            background-color: $contrast-primary-color !important;
+
+            &:after{
+                background-color: $contrast-primary-color !important;
+            }
+        }
+
+        &__dropdown{
+            background-color: $contrast-primary-color !important;
+            border-color: $contrast-secondary-color !important;
+            &-toggle{
+                border-color: $contrast-secondary-color !important;
+                &:after{
+                    color: $contrast-secondary-color !important;
+                }
+            }
+            &-menu{
+                background-color: $contrast-primary-color !important;
+                border-color: $contrast-secondary-color !important;
+            }
+
+            .dropdown-item{
+                &:hover{
+                    background-color: $contrast-secondary-color !important;
+                    color: $contrast-primary-color !important;
+                }
+            }
+        }
+    }
+
+    .etab-service{
+        &:before{
+            content: none;
+        }
+    }
+
+    .etablissement-list{
+        background-color: $contrast-primary-color !important;
+    }
+    
+     /*
+    -----------------------------------------
+    Accesibility
+    -----------------------------------------
+    */
+    .accessibility{
+        &__dropdown-menu{
+            background-color: $contrast-primary-color !important;
+            border: rem(1px) solid $contrast-secondary-color;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Tags
+    -----------------------------------------
+    */
+    .theme-tag{
+        background-color: rgba($contrast-primary-color, 0.5) !important;
+    }
+
+    .count-tag{
+        color: $contrast-primary-color !important;
+
+        &:before{
+            background-color: $contrast-secondary-color !important;
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Sidebox
+    -----------------------------------------
+    */
+
+    .sidebox{
+        &:before{
+            box-shadow: 0px 11px 40px 0px rgba($contrast-secondary-color, 0.05);
+        }
+
+        &__header{
+            h2{
+                border-color: $contrast-secondary-color;
+            }
+        }
+       
+    }
+
+    /*
+    -----------------------------------------
+    Field
+    -----------------------------------------
+    */
+    .full-spacing{
+        .field-spacing{
+            &:after{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+    // Quote
+    .field-quote{
+        background-color: $contrast-primary-color !important;
+        border: rem(2px) solid $contrast-secondary-color; 
+
+        cite{
+            &:before{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    // Collapse
+    .field-collapse{
+        &__trigger{
+            border-color: $contrast-secondary-color !important;
+
+            &:after,
+            &:before{
+                color : $contrast-primary-color !important;
+                background-color: $contrast-secondary-color !important ;
+            }
+        }
+
+        &__well{
+            background-color: $contrast-primary-color !important;
+            border: 2px solid $contrast-secondary-color !important;
+            margin-top: rem(-2px);
+        }
+    }
+
+    // Well
+    .field-well{
+        border: 2px solid $contrast-secondary-color !important;
+        background-color: $contrast-secondary-color !important;
+        h2{
+            color: $contrast-primary-color !important;
+        }
+        &__body{
+            p{
+                color: $contrast-primary-color !important;
+            }
+            &:before,
+            &:after{
+                background-color: $contrast-primary-color !important;
+            }
+        }
+    }
+
+    .field-libre{
+        background-color: $contrast-primary-color !important;
+        h2{
+            color: $contrast-secondary-color !important;
+        }
+        &__body{
+            p{
+                color: $contrast-secondary-color !important;
+            }
+            &:before{
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    // Info
+    .field-negative{
+        background-color: $contrast-primary-color !important;
+        border: rem(2px) solid $contrast-secondary-color;
+
+        &:before{
+            top: rem(-2px);
+            height: calc(100% + #{rem(4px)});
+            border-top: rem(2px) solid $contrast-secondary-color;
+            border-bottom: rem(2px) solid $contrast-secondary-color;
+        }
+        
+    }
+
+    /*
+    -----------------------------------------
+    Form
+    -----------------------------------------
+    */
+
+    // Input
+    input,
+    textarea{
+        &.form-control{
+            background-color: $contrast-primary-color !important;
+            border-color: $contrast-secondary-color !important;
+            &::placeholder{
+                color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    // Datepicker
+    .datepicker{
+        background-color: $contrast-primary-color !important;
+        border-color: $contrast-secondary-color !important;
+
+        &--pointer{
+            border-color: $contrast-secondary-color !important;
+            background-color: $contrast-secondary-color !important;
+        }
+        &--nav-title{
+            &:hover{
+                &,i{
+                    color: $contrast-primary-color !important;
+                    background-color: $contrast-secondary-color !important;
+                }
+            }
+        }
+
+        &--cell-day{
+            &.-focus-{
+                color: $contrast-primary-color !important;
+                background-color: $contrast-secondary-color !important;
+            }
+        }
+
+        &--nav{
+            border-color: $contrast-secondary-color !important;
+            &-action{
+                &:hover{
+                    background-color: $contrast-secondary-color !important;
+    
+                    path{
+                        stroke: $contrast-primary-color !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Hero
+    -----------------------------------------
+    */
+
+    .hero-slider{
+        .slider{
+            &-nav{
+                background-color: $contrast-primary-color !important;
+            }
+            &-pagination{
+                .swiper-pagination-bullet{
+                    background-color: $contrast-secondary-color !important;
+                    opacity: 0.4 !important;
+                    &-active{
+                        opacity: 1 !important;
+                    }
+                }
+            }
+            &-prev,
+            &-next{
+                @include hover-focus-active{
+                    background-color: $contrast-secondary-color !important;
+                    [class^="ico-"],
+                    [class*="ico-"]{
+                        color: $contrast-primary-color !important;
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Slider
+    -----------------------------------------
+    */
+    .etablissement--home__slider{
+        background-color: $contrast-primary-color;
+        .slider-progress-bar{
+            background-color: $contrast-secondary-color !important;
+        }
+    }
+
+
+    /*
+    -----------------------------------------
+    Map Offres de soins
+    -----------------------------------------
+    */
+    .my-div-icon.selected{
+        background-color: $contrast-secondary-color !important;
+    }
+    .leaflet{
+        &-overlay-pane{
+            .cls-1{
+                fill:$contrast-primary-color !important;
+            }
+
+            .cls-2{
+                stroke: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Table
+    -----------------------------------------
+    */
+
+    .o-table{
+        &, thead tr{
+            border-color: $contrast-secondary-color !important;
+        }
+
+        &.odd{
+            tbody{
+                tr{
+                    &:nth-child(odd){
+                        background-color: $contrast-secondary-color !important;
+
+                        p{
+                            color: $contrast-primary-color !important
+                        }
+                    }
+                }
+            }
+        }
+        &.even{
+            tbody{
+                tr{
+                    &:nth-child(even){
+                        background-color: $contrast-secondary-color !important;
+    
+                        p{
+                            color: $contrast-primary-color !important
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .table-resource{
+        tbody{
+            tr{
+                border-top: none;
+                border-color: $contrast-secondary-color !important;
+                &:only-child{
+                    background-color: $contrast-primary-color !important;
+                    border-top: rem(1px) solid $contrast-secondary-color !important;
+                }
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Line
+    -----------------------------------------
+    */
+
+    // HR
+    hr{
+        border-color: $contrast-secondary-color !important;
+    }
+
+    // Dash
+    .dash,
+    .line-dash,
+    .double-dash{
+        &, *{
+            &:before,
+            &:after{
+                border-color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    List
+    -----------------------------------------
+    */
+
+    .list-bullet{
+        li {
+            &:before{
+                color: $contrast-secondary-color !important;
+            }
+        }
+    }
+
+    /*
+    -----------------------------------------
+    Content RTE
+    -----------------------------------------
+    */
+
+    .content-rte{
+        h2,
+        h3{
+            &:before{
+                border-color: $contrast-secondary-color !important;
+            }
+        }
+
+        ul:not([class]){
+            li{
+                &:before{
+                    color: $contrast-secondary-color !important;
+                }
+            }
+        }
+
+        ol:not([class]){
+            li{
+                &:before{
+                    color:  $contrast-secondary-color !important;
+                }
+            }
+        }
+
+        // Sidebox
+        .sidebox{
+            background-color: transparent !important;
+            border: rem(2px) solid $contrast-secondary-color !important;
+        }
+    }
+}

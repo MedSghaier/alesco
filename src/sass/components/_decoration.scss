@@ -1,0 +1,13 @@
+.line{
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    height: rem(2px);
+    width: calc(100% - #{rem(10px)});
+    right: rem(20px);
+    top: 50%;
+    transform: translateY(50%);
+    background-color: $color-line;
+  }
+}
