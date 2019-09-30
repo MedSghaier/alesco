@@ -25,6 +25,7 @@ Header
     transition: all 0.2s ease-in-out;
     @include respond-below(lg){
        background-color: $white;
+       box-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
     }
     &__content{
         position: relative;
@@ -38,16 +39,16 @@ Header
     }
 
     &__logo{
-        flex: 1 0 auto;
+        @include respond-above(lg){
+            flex: 1 0 auto;
+        }
     }
 
     &__links{
         display: flex;
         align-items: center;
         margin-top: rem(10px);
-        @include respond-below(lg){
-            display: none;
-        }
+        
         &-item{
             text-transform: uppercase;
             position: relative;
@@ -65,14 +66,51 @@ Header
                 transition: all 277ms cubic-bezier(0.16, 0.01, 0.77, 1);
             }
 
-            &:hover{
-                color:$white;
-                &:before{
-                    transform: scaleX(1);
+            @include respond-above(lg){
+                &:hover{
+                    color:$white;
+                    &:before{
+                        transform: scaleX(1);
+                    }
+                }
+
+                &:not(:last-child){
+                    margin-right: rem(15px);
                 }
             }
-            &:not(:last-child){
-                margin-right: rem(15px);
+
+            @include respond-below(lg){
+                color: $black;
+                width: 100%;
+                padding: 5px 0;
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                    border-bottom: (1px) solid $color-line;
+                }
+                &:before{
+                    content: none;
+                }
+
+            }
+        }
+
+        @include respond-below(lg){
+            position: absolute;
+            text-align: center;
+            margin-top: 0;
+            top: 100%;
+            flex-direction: column;
+            left: 0;
+            width: 100%;
+            background-color:$white;
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+
+            &.is-open{
+                opacity: 1;
+                visibility: visible
             }
         }
     }
@@ -80,6 +118,49 @@ Header
 
     &__hamburger{
         margin-top: rem(10px);
+    }
+
+    &__lang{
+        &-dropdown{
+            $self: &;
+            margin-top: rem(10px);
+            &-toggle{
+                font-size: rem(13px);
+                color: $white;
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    top:50%;
+                    transform: translateY(-50%);
+                    right: -5px;
+                    width: 0;
+                    height: 0;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 4px solid $white;
+                    transition: all 0.2s ease-in-out;
+                    @include respond-below(lg){
+                        border-top-color: $black;
+                    }
+                }
+                @include respond-below(lg){
+                    color: $black;
+                }
+            }
+
+            &-menu{
+                min-width: unset;
+            }
+
+            &.show{
+                #{$self}-toggle:after{
+                    transform: rotate(180deg)
+                }
+            }
+        }
+       
     }
 }
 
@@ -116,7 +197,7 @@ Home scrolling state
         &{
             @include respond-above(lg){
                 background-color: $white;
-            box-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
+                box-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
             }
         }
 
@@ -125,6 +206,16 @@ Home scrolling state
                 color: $black;
                 &:hover{
                     color: $black;
+                }
+            }
+        }
+
+        #{$self}__lang-dropdown{
+            &-toggle{
+                color: $black;
+
+                &:after{
+                    border-top-color: $black;
                 }
             }
         }

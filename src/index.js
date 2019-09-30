@@ -3,7 +3,7 @@ import './sass/main.scss'
 import 'bootstrap-select';
 
 
-$(document).ready(function(){
+$(document).ready(function () {
     /*
     -----------------------------------------
     Header Scroll
@@ -30,10 +30,34 @@ $(document).ready(function(){
     -----------------------------------------
     */
 
-    $('a[href*="#"]').on('click', function(e) {
+    $('a[href*="#"]').on('click', function (e) {
         e.preventDefault()
-      
-        $('html, body').animate({scrollTop: $($(this).attr('href')).offset().top - 70,},800)
-      })
-    
+
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top - 70, }, 800, function(){
+            $('.header__links').removeClass('is-open') ;
+            $('.nav-trigger').removeClass('active')
+        })
+    })
+    /*
+    -----------------------------------------
+    Navigation
+    -----------------------------------------
+    */
+    $('.nav-trigger').on('click', function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $('.header__links').removeClass('is-open');
+
+        } else {
+            $(this).addClass('active');
+            $('.header__links').addClass('is-open');
+        }
+    })
+
+    /*
+    -----------------------------------------
+    Close Navigation
+    -----------------------------------------
+    */
+
 })
