@@ -60,7 +60,7 @@ Service Card
     flex-direction: column;
 
     &__img{
-        margin-bottom: rem(30px);
+        margin-bottom: rem(20px);
 
         @include respond-below(md){
             img{
@@ -71,7 +71,7 @@ Service Card
     }
 
     &__title{
-        margin-bottom: rem(30px);
+        margin-bottom: rem(15px);
         h3{
             text-transform: uppercase;
             color: $color-gamma;

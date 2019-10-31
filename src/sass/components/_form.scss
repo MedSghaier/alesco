@@ -25,7 +25,7 @@ button{
             outline: none;
             color: inherit;
             border-color: $color-beta;
-            background-color: inherit;
+            background-color: $white;
         }
 
         @include placeholder(){
